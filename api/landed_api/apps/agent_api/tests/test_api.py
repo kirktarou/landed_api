@@ -3,7 +3,7 @@ from django.urls import reverse
 from rest_framework.test import APITestCase
 from rest_framework.views import status
 
-from landed_api.apps.agent_api.models.agent import Agent, Persona
+from landed_api.apps.agent_api.models.agent import Agent, Persona, Region
 
 
 class AgentListCreateAPIView(APITestCase):
@@ -16,6 +16,7 @@ class AgentListCreateAPIView(APITestCase):
             "first_name": "Kirk",
             "last_name": "Tarou",
             "personas": ["Friendly"],
+            "region": "Bay Area",
         }
         response = self.client.post(self.url, data=data, format="json")
         self.assertEquals(response.status_code, status.HTTP_201_CREATED)
@@ -26,7 +27,9 @@ class AgentListCreateAPIView(APITestCase):
         self.assertEquals(agent.last_name, data["last_name"])
 
     def test_get_agent_list(self):
-        agent = Agent(first_name="Kirk", last_name="Tarou")
+        region = Region(name="Bay Area")
+        region.save()
+        agent = Agent(first_name="Kirk", last_name="Tarou", region=region)
         agent.save()
         persona = Persona(name="Friendly")
         persona.save()
@@ -44,7 +47,9 @@ class AgentListCreateAPIView(APITestCase):
 
 class AgentDetailsAPIViewTest(APITestCase):
     def setUp(self) -> None:
-        self.agent = Agent(first_name="Kirk", last_name="Tarou")
+        region = Region(name="Bay Area")
+        region.save()
+        self.agent = Agent(first_name="Kirk", last_name="Tarou", region=region)
         self.agent.save()
         persona = Persona(name="Friendly")
         persona.save()
@@ -60,6 +65,7 @@ class AgentDetailsAPIViewTest(APITestCase):
         self.assertEquals(data["first_name"], self.agent.first_name)
         self.assertEquals(data["last_name"], self.agent.last_name)
         self.assertEquals(data["personas"][0], self.agent.personas.values()[0]['name'])
+        self.assertEquals(data["region"], self.agent.region.name)
 
     def test_update_agent(self):
         response = self.client.get(self.url)
@@ -67,6 +73,7 @@ class AgentDetailsAPIViewTest(APITestCase):
         data = response.json()
         data["first_name"] = "Siobhán"
         data["last_name"] = "Cronin"
+        data["region"] = "North Bay"
         data["personas"].append("Funny")
         self.assertEquals(Persona.objects.count(), 1)
         response = self.client.put(self.url, data=data, format="json")
@@ -77,6 +84,7 @@ class AgentDetailsAPIViewTest(APITestCase):
         self.assertEquals(self.agent.last_name, data["last_name"])
         self.assertEquals(self.agent.personas.values()[0]['name'], data["personas"][0])
         self.assertEquals(self.agent.personas.values()[1]['name'], data["personas"][1])
+        self.assertEquals(self.agent.region.name, data["region"])
 
     def test_delete_agent(self):
         self.assertEquals(Agent.objects.count(), 1)
