@@ -1,0 +1,28 @@
+version: '3'
+
+services:
+  postgres:
+    image: postgres:latest
+    volumes:
+      - "landed_api-pgdata:/var/lib/postgresql/data"
+    environment:
+      - POSTGRES_DB=landed_api
+      - POSTGRES_USER=landed_api
+      - POSTGRES_PASSWORD=landed_api
+    ports:
+      - "5432:5432"
+  # redis:
+  #   image: redis:latest
+  # elastic:
+  #   image: elasticsearch:7.2.0
+  #   volumes:
+  #     - "landed_api-elasticdata:/usr/share/elasticsearch/data"
+  #   environment:
+  #     - discovery.type=single-node
+  #   ports:
+  #     - "9200:9200"
+  #     - "9300:9200"
+
+volumes:
+  landed_api-pgdata:
+  landed_api-elasticdata:
