@@ -12,3 +12,7 @@ migrate:
 
 req-compile:
 	@for fl in $(shell ls requirements/); do pip-compile requirements/$${fl}; done
+
+dev_requirements:
+	pip install -r requirements/dev.txt
+	
