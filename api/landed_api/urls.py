@@ -15,10 +15,14 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.conf import settings
-from django.urls import path, include
+from django.urls import path, re_path, include
 
 
-urlpatterns = [path("admin/", admin.site.urls)]
+urlpatterns = [
+    path("admin/", admin.site.urls),
+    re_path(r'api/(?P<version>[v1]+)/', include('landed_api.apps.agent_api.rest_api.urls')),
+
+    ]
 
 
 # enable serve static by django for local development

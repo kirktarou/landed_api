@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     # our apps
     "landed_api.apps.common.apps.CommonConfig",
     "landed_api.apps.account.apps.AccountConfig",
+    "landed_api.apps.agent_api.apps.AgentApiConfig",
 ] + env.list("LANDED_API_DEV_INSTALLED_APPS", default=[])
 
 MIDDLEWARE = [
