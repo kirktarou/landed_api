@@ -29,3 +29,5 @@ class PersonasSerializer(serializers.ModelSerializer):
     class Meta:
         model=Persona
         fields = ("name",)
+    def to_representation(self, instance):
+        return instance.name
