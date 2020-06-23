@@ -14,5 +14,6 @@ EXPOSE 8000
 
 RUN ["pwd"]
 RUN ["ls", "-l"]
+RUN ["mkdir", "/api/landed_api/static"]
 
 CMD ["gunicorn", "landed_api.wsgi", "-b", "0.0.0.0:8000"]
