@@ -24,7 +24,10 @@ schema_view = get_schema_view(
     openapi.Info(
         title="Landed Agent API",
         default_version="v1",
-        description="API for accessing information about real estate agents participating in Landed's program",
+        description="""
+        API for accessing information about real estate agents
+        participating in Landed's program
+        """,
     ),
     public=True,
     permission_classes=(permissions.AllowAny,),
