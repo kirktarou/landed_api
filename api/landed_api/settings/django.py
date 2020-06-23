@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     # 3rd party apps
     "rest_framework",
+    "django_filters",
     # our apps
     "landed_api.apps.common.apps.CommonConfig",
     "landed_api.apps.account.apps.AccountConfig",
