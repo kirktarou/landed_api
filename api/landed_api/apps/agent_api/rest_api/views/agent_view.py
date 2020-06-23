@@ -1,7 +1,7 @@
 from rest_framework.generics import ListCreateAPIView, ListAPIView, RetrieveUpdateDestroyAPIView
 
-from landed_api.apps.agent_api.models.agent import Agent, Persona
-from landed_api.apps.agent_api.rest_api.serializers.agent import AgentSerializer, PersonasSerializer
+from landed_api.apps.agent_api.models.agent import Agent, Persona, Region
+from landed_api.apps.agent_api.rest_api.serializers.agent import AgentSerializer, PersonasSerializer, RegionSerializer
 
 
 class AgentListCreateAPIView(ListCreateAPIView):
@@ -27,3 +27,10 @@ class PersonaListAPIView(ListAPIView):
     """
     serializer_class = PersonasSerializer
     queryset = Persona.objects.all()
+
+class RegionListAPIView(ListAPIView):
+    """
+    API view to retrieve agent personas
+    """
+    serializer_class = RegionSerializer
+    queryset = Region.objects.all()
