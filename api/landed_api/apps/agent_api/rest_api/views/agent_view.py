@@ -7,7 +7,7 @@ from landed_api.apps.agent_api.rest_api.serializers.agent import AgentSerializer
 
 
 class AgentFilter(filters.FilterSet):
-    region = filters.CharFilter(field_name='region__name', lookup_expr='icontains')
+    region = filters.ModelMultipleChoiceFilter(field_name='region__name', to_field_name='name', queryset=Region.objects.all())
     first_name = filters.CharFilter(field_name='first_name', lookup_expr='icontains')
     last_name = filters.CharFilter(field_name='last_name', lookup_expr='icontains')
     persona = filters.ModelMultipleChoiceFilter(
