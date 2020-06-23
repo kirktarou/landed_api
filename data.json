@@ -1,0 +1,74 @@
+{
+  "agents": [
+    {
+      "first_name": "Robert",
+      "first_time_agent": false,
+      "last_name": "Whistler",
+      "personas": ["Mild"],
+      "region": "Hawaii"
+    },
+    {
+      "first_name": "Paul",
+      "first_time_agent": false,
+      "last_name": "Storjohann",
+      "personas": ["Funny"],
+      "region": "Bay Area"
+    },
+    {
+      "first_name": "Sarah",
+      "first_time_agent": true,
+      "last_name": "Cortes",
+      "personas": ["Adventurous"],
+      "region": "Portland"
+    },
+    {
+      "first_name": "Mariko",
+      "first_time_agent": false,
+      "last_name": "Mellas",
+      "personas": ["Mild"],
+      "region": "Bay Area"
+    },
+    {
+      "first_name": "Robert",
+      "first_time_agent": false,
+      "last_name": "Mathieu",
+      "personas": ["Mild"],
+      "region": "Seattle"
+    },
+    {
+      "first_name": "Melissa",
+      "first_time_agent": false,
+      "last_name": "Glazener",
+      "personas": ["Mild"],
+      "region": "Denver"
+    },
+    {
+      "first_name": "Raymond",
+      "first_time_agent": true,
+      "last_name": "Smith",
+      "personas": ["Mild"],
+      "region": "Bay Area"
+    },
+    {
+      "first_name": "Rebecca",
+      "first_time_agent": true,
+      "last_name": "Miller",
+      "personas": ["Mild"],
+      "region": "Denver"
+    },
+    {
+      "first_name": "Glen",
+      "first_time_agent": true,
+      "last_name": "Christian",
+      "personas": ["Professorial"],
+      "region": "Bay Area"
+    },
+    {
+      "first_name": "Brent",
+      "first_time_agent": false,
+      "last_name": "Stanfill",
+      "personas": ["Funny"],
+      "region": "Denver"
+    }
+  ]
+}

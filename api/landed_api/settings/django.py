@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     # 3rd party apps
     "rest_framework",
     "django_filters",
+    "drf_yasg",
     # our apps
     "landed_api.apps.common.apps.CommonConfig",
     "landed_api.apps.account.apps.AccountConfig",
@@ -125,6 +126,9 @@ USE_TZ = True
 
 STATIC_URL = "/static/"
 STATIC_ROOT = rel("staticfiles/")
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'myappfolder/static'),
+)
 STATICFILES_DIRS = (rel("static/"),)
 
 MEDIA_URL = "/media/"

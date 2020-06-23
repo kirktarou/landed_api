@@ -4,3 +4,4 @@ django-environ
 gunicorn
 djangorestframework
 django-filter
+drf_yasg
