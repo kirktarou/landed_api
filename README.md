@@ -4,19 +4,39 @@
 
 `build` — build scripts, docker/docker-compose
 
-### Development mode
+### Dev environment set-up
 
-Start the postgres container:
+Install pyenv and virtualenv:
+`brew install pyenv pyenv-virtualenv`
 
-`docker-compose -f build/docker-compose-dev.yml up`
+Install python:
+`pyenv install 3.8.2`
+
+Create virtualenv:
+`pyenv virtualenv 3.8.2 landed_api`
+
+Set local virtualenv:
+`pyenv local landed_api`
+
+Install python dependencies:
+`cd api && make dev_requirements`
+
+### Start Dev environment
+In a separate shell, start the Postgres container:
+
+`cd [project directory] && docker-compose -f build/docker-compose-dev.yml up`
 
 Load the agents from the data file:
-`python manage.py load_agents ~[path to]/landed_api/data.json`
+
+`python manage.py load_agents [project directory]/data.json`
+
+Run the server:
+`make run`
+
+### Run in API server and Postgres in Docker
 
 Stop dev mode:
-Press 'Ctrl-C' in window running the postges docker container
-
-### Run in Docker
+Press 'Ctrl-C' in window running the postges Docker container
 
 Run both postges and the django server in Docker containers:
 `docker-compose -f build/docker-compose-api.yml up`
