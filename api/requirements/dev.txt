@@ -55,7 +55,7 @@ django==3.0.7
     #   django-filter
     #   djangorestframework
     #   drf-yasg
-djangorestframework==3.11.0
+djangorestframework==3.11.2
     # via
     #   -r common.in
     #   drf-yasg
