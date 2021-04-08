@@ -48,7 +48,7 @@ django-extensions==2.2.9
     # via -r dev.in
 django-filter==2.3.0
     # via -r common.in
-django==3.0.12
+django==3.0.14
     # via
     #   -r common.in
     #   django-debug-toolbar
