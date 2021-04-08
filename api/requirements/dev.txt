@@ -123,7 +123,7 @@ pydocstyle==5.0.2
     # via pylama
 pyflakes==2.2.0
     # via pylama
-pygments==2.6.1
+pygments==2.7.4
     # via ipython
 pylama==7.7.1
     # via -r dev.in
