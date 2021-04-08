@@ -25,6 +25,9 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         cd api && pip install -r requirements/dev.txt
+    - name: Start Postgres
+      run: |
+        docker-compose -f build/docker-compose-dev.yml up
     - name: Run Tests
       run: |
         cd api && python manage.py test
