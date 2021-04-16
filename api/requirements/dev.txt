@@ -40,7 +40,7 @@ decorator==4.4.2
     # via
     #   ipython
     #   traitlets
-django-debug-toolbar==2.2
+django-debug-toolbar==2.2.1
     # via -r dev.in
 django-environ==0.4.5
     # via -r common.in
