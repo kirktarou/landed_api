@@ -16,16 +16,16 @@ coreschema==0.0.4
     # via
     #   coreapi
     #   drf-yasg
-django-environ==0.4.5
-    # via -r common.in
-django-filter==2.3.0
-    # via -r common.in
-django==3.0.12
+django==3.1.13
     # via
     #   -r common.in
     #   django-filter
     #   djangorestframework
     #   drf-yasg
+django-environ==0.4.5
+    # via -r common.in
+django-filter==2.3.0
+    # via -r common.in
 djangorestframework==3.11.2
     # via
     #   -r common.in
