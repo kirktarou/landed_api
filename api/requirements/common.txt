@@ -6,7 +6,7 @@
 #
 asgiref==3.2.10
     # via django
-certifi==2020.6.20
+certifi==2022.12.7
     # via requests
 chardet==3.0.4
     # via requests
@@ -16,16 +16,16 @@ coreschema==0.0.4
     # via
     #   coreapi
     #   drf-yasg
-django-environ==0.4.5
-    # via -r common.in
-django-filter==2.3.0
-    # via -r common.in
 django==3.0.12
     # via
     #   -r common.in
     #   django-filter
     #   djangorestframework
     #   drf-yasg
+django-environ==0.4.5
+    # via -r common.in
+django-filter==2.3.0
+    # via -r common.in
 djangorestframework==3.11.2
     # via
     #   -r common.in
@@ -54,7 +54,7 @@ pytz==2020.1
     # via django
 requests==2.24.0
     # via coreapi
-ruamel.yaml==0.16.10
+ruamel-yaml==0.16.10
     # via drf-yasg
 six==1.15.0
     # via
