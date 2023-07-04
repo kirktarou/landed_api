@@ -96,7 +96,9 @@ DATABASES = {"default": env.db("LANDED_API_DATABASE_URL")}
 AUTH_USER_MODEL = "account.User"
 
 AUTH_PASSWORD_VALIDATORS = [
-    {"NAME": "django.contrib.auth.password_validation.UserAttributeSimilarityValidator"},
+    {
+        "NAME": "django.contrib.auth.password_validation.UserAttributeSimilarityValidator"
+    },
     {"NAME": "django.contrib.auth.password_validation.MinimumLengthValidator"},
     {"NAME": "django.contrib.auth.password_validation.CommonPasswordValidator"},
     {"NAME": "django.contrib.auth.password_validation.NumericPasswordValidator"},
@@ -124,10 +126,15 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/{{ docs_version }}/howto/static-files/
 
-STATIC_URL = "/static/"
+STATIC_URL = "static/"
+
 STATIC_ROOT = rel("staticfiles/")
-STATICFILES_DIRS = (os.path.join(BASE_DIR, "myappfolder/static"),)
-STATICFILES_DIRS = (rel("static/"),)
+# STATICFILES_DIRS = [
+#    BASE_DIR + "/static",
+#    "/var/www/static/",
+# ]
 
 MEDIA_URL = "/media/"
 MEDIA_ROOT = rel("media/")
+
+DEFAULT_AUTO_FIELD = "django.db.models.AutoField"
